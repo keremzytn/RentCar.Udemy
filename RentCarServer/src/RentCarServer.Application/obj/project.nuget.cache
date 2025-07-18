@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "m1zekjQC0XA=",
+  "success": true,
+  "projectFilePath": "/Users/kerem/Downloads/RentCar.Udemy.Egitimi.Reposu-baac759842213dfee37fc0583557f7594bf241bc/RentCarServer/src/RentCarServer.Application/RentCarServer.Application.csproj",
+  "expectedPackageFiles": [
+    "/Users/kerem/.nuget/packages/fluentvalidation/12.0.0/fluentvalidation.12.0.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/fluentvalidation.dependencyinjectionextensions/12.0.0/fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/mapster/7.4.0/mapster.7.4.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/mapster.core/1.2.1/mapster.core.1.2.1.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.0/microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/ts.mediatr/9.0.6/ts.mediatr.9.0.6.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/ts.result/9.0.1/ts.result.9.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
