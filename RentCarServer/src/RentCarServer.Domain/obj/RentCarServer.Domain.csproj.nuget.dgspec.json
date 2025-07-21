@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kerem/Downloads/RentCar.Udemy.Egitimi.Reposu-baac759842213dfee37fc0583557f7594bf241bc/RentCarServer/src/RentCarServer.Domain/RentCarServer.Domain.csproj": {}
+    "/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/RentCarServer.Domain.csproj": {}
   },
   "projects": {
-    "/Users/kerem/Downloads/RentCar.Udemy.Egitimi.Reposu-baac759842213dfee37fc0583557f7594bf241bc/RentCarServer/src/RentCarServer.Domain/RentCarServer.Domain.csproj": {
+    "/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/RentCarServer.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kerem/Downloads/RentCar.Udemy.Egitimi.Reposu-baac759842213dfee37fc0583557f7594bf241bc/RentCarServer/src/RentCarServer.Domain/RentCarServer.Domain.csproj",
+        "projectUniqueName": "/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/RentCarServer.Domain.csproj",
         "projectName": "RentCarServer.Domain",
-        "projectPath": "/Users/kerem/Downloads/RentCar.Udemy.Egitimi.Reposu-baac759842213dfee37fc0583557f7594bf241bc/RentCarServer/src/RentCarServer.Domain/RentCarServer.Domain.csproj",
+        "projectPath": "/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/RentCarServer.Domain.csproj",
         "packagesPath": "/Users/kerem/.nuget/packages/",
-        "outputPath": "/Users/kerem/Downloads/RentCar.Udemy.Egitimi.Reposu-baac759842213dfee37fc0583557f7594bf241bc/RentCarServer/src/RentCarServer.Domain/obj/",
+        "outputPath": "/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/kerem/.nuget/NuGet/NuGet.Config"
@@ -44,6 +44,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "TS.EntityFrameworkCore.GenericRepository": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

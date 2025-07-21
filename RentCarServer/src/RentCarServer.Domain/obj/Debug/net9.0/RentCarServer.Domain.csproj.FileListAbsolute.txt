@@ -9,3 +9,16 @@
 /Users/kerem/Downloads/RentCar.Udemy.Egitimi.Reposu-baac759842213dfee37fc0583557f7594bf241bc/RentCarServer/src/RentCarServer.Domain/obj/Debug/net9.0/refint/RentCarServer.Domain.dll
 /Users/kerem/Downloads/RentCar.Udemy.Egitimi.Reposu-baac759842213dfee37fc0583557f7594bf241bc/RentCarServer/src/RentCarServer.Domain/obj/Debug/net9.0/RentCarServer.Domain.pdb
 /Users/kerem/Downloads/RentCar.Udemy.Egitimi.Reposu-baac759842213dfee37fc0583557f7594bf241bc/RentCarServer/src/RentCarServer.Domain/obj/Debug/net9.0/ref/RentCarServer.Domain.dll
+/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/bin/Debug/net9.0/RentCarServer.Domain.deps.json
+/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/bin/Debug/net9.0/RentCarServer.Domain.dll
+/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/bin/Debug/net9.0/RentCarServer.Domain.pdb
+/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/obj/Debug/net9.0/RentCarServer.Domain.csproj.AssemblyReference.cache
+/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/obj/Debug/net9.0/RentCarServer.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/obj/Debug/net9.0/RentCarServer.Domain.AssemblyInfoInputs.cache
+/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/obj/Debug/net9.0/RentCarServer.Domain.AssemblyInfo.cs
+/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/obj/Debug/net9.0/RentCarServer.Domain.csproj.CoreCompileInputs.cache
+/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/obj/Debug/net9.0/RentCarServer.Domain.sourcelink.json
+/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/obj/Debug/net9.0/RentCarServer.Domain.dll
+/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/obj/Debug/net9.0/refint/RentCarServer.Domain.dll
+/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/obj/Debug/net9.0/RentCarServer.Domain.pdb
+/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/obj/Debug/net9.0/ref/RentCarServer.Domain.dll

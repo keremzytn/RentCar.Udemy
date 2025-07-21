@@ -3,9 +3,20 @@ using Microsoft.AspNetCore.OData;
 using Microsoft.AspNetCore.RateLimiting;
 using RentCarServer.Application;
 using RentCarServer.Infrastructure;
+using RentCarServer.WebAPI;
 using Scalar.AspNetCore;
+using RentCarServer.WebAPI.Modules;
 
 var builder = WebApplication.CreateBuilder(args);
+
+if (builder.Environment.IsDevelopment())
+{
+    builder.Configuration.AddJsonFile("appsettings.Development.json", optional: false, reloadOnChange: true);
+}
+else
+{
+    builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+}
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
@@ -31,6 +42,7 @@ builder.Services
             );
 builder.Services.AddCors();
 builder.Services.AddOpenApi();
+builder.Services.AddExceptionHandler<ExceptionHandler>().AddProblemDetails();
 
 var app = builder.Build();
 app.MapOpenApi();
@@ -41,7 +53,10 @@ app.UseCors(x => x
 .AllowAnyOrigin()
 .AllowAnyMethod()
 .SetPreflightMaxAge(TimeSpan.FromMinutes(10)));
+app.UseExceptionHandler();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers().RequireRateLimiting("fixed");
+app.MapAuthModule();
+//await app.CreateFirstUser();
 app.Run();

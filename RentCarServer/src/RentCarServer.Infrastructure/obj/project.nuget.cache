@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZiQDH31fCcY=",
+  "dgSpecHash": "wbNe3OpYLnA=",
   "success": true,
-  "projectFilePath": "/Users/kerem/Downloads/RentCar.Udemy.Egitimi.Reposu-baac759842213dfee37fc0583557f7594bf241bc/RentCarServer/src/RentCarServer.Infrastructure/RentCarServer.Infrastructure.csproj",
+  "projectFilePath": "/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Infrastructure/RentCarServer.Infrastructure.csproj",
   "expectedPackageFiles": [
     "/Users/kerem/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Users/kerem/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
@@ -103,6 +103,7 @@
     "/Users/kerem/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512",
     "/Users/kerem/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "/Users/kerem/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/ts.entityframeworkcore.genericrepository/9.0.3/ts.entityframeworkcore.genericrepository.9.0.3.nupkg.sha512",
     "/Users/kerem/.nuget/packages/ts.mediatr/9.0.6/ts.mediatr.9.0.6.nupkg.sha512",
     "/Users/kerem/.nuget/packages/ts.result/9.0.1/ts.result.9.0.1.nupkg.sha512"
   ],

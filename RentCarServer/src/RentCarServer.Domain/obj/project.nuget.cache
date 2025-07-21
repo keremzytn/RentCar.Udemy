@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "0iXEzXy8Pe0=",
+  "dgSpecHash": "Y6KpnpMhMoY=",
   "success": true,
-  "projectFilePath": "/Users/kerem/Downloads/RentCar.Udemy.Egitimi.Reposu-baac759842213dfee37fc0583557f7594bf241bc/RentCarServer/src/RentCarServer.Domain/RentCarServer.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.Domain/RentCarServer.Domain.csproj",
+  "expectedPackageFiles": [
+    "/Users/kerem/.nuget/packages/microsoft.entityframeworkcore/9.0.0/microsoft.entityframeworkcore.9.0.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.0/microsoft.entityframeworkcore.abstractions.9.0.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/microsoft.entityframeworkcore.analyzers/9.0.0/microsoft.entityframeworkcore.analyzers.9.0.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/microsoft.extensions.caching.abstractions/9.0.0/microsoft.extensions.caching.abstractions.9.0.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/microsoft.extensions.caching.memory/9.0.0/microsoft.extensions.caching.memory.9.0.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.0/microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.0/microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/microsoft.extensions.logging/9.0.0/microsoft.extensions.logging.9.0.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/microsoft.extensions.logging.abstractions/9.0.0/microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/microsoft.extensions.options/9.0.0/microsoft.extensions.options.9.0.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/microsoft.extensions.primitives/9.0.0/microsoft.extensions.primitives.9.0.0.nupkg.sha512",
+    "/Users/kerem/.nuget/packages/ts.entityframeworkcore.genericrepository/9.0.3/ts.entityframeworkcore.genericrepository.9.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

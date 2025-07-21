@@ -1,15 +1,19 @@
 ﻿using System.Security.Claims;
+using GenericRepository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RentCarServer.Domain.Abstractions;
+using RentCarServer.Domain.Users;
 
 namespace RentCarServer.Infrastructure.Context;
-public sealed class ApplicationDbContext : DbContext
+public sealed class ApplicationDbContext : DbContext, IUnitOfWork
 {
     public ApplicationDbContext(DbContextOptions options) : base(options)
     {
     }
+
+    public DbSet<User> Users { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -32,12 +36,12 @@ public sealed class ApplicationDbContext : DbContext
 
         HttpContextAccessor httpContextAccessor = new();
         string userIdString =
-            httpContextAccessor
-            .HttpContext!
-            .User
-            .Claims
-            .First(p => p.Type == ClaimTypes.NameIdentifier)
-            .Value;
+        httpContextAccessor
+        .HttpContext!
+        .User
+        .Claims
+        .First(p => p.Type == ClaimTypes.NameIdentifier)
+        .Value;
 
         Guid userId = Guid.Parse(userIdString);
         IdentityId identityId = new(userId);
@@ -47,7 +51,7 @@ public sealed class ApplicationDbContext : DbContext
             if (entry.State == EntityState.Added)
             {
                 entry.Property(p => p.CreatedAt)
-                    .CurrentValue = DateTimeOffset.Now;
+                    .CurrentValue = DateTimeOffset.UtcNow;
                 entry.Property(p => p.CreatedBy)
                     .CurrentValue = identityId;
             }
@@ -57,14 +61,14 @@ public sealed class ApplicationDbContext : DbContext
                 if (entry.Property(p => p.IsDeleted).CurrentValue == true)
                 {
                     entry.Property(p => p.DeletedAt)
-                    .CurrentValue = DateTimeOffset.Now;
+                    .CurrentValue = DateTimeOffset.UtcNow;
                     entry.Property(p => p.DeletedBy)
                     .CurrentValue = identityId;
                 }
                 else
                 {
                     entry.Property(p => p.UpdatedAt)
-                        .CurrentValue = DateTimeOffset.Now;
+                        .CurrentValue = DateTimeOffset.UtcNow;
                     entry.Property(p => p.UpdatedBy)
                     .CurrentValue = identityId;
                 }

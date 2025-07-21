@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GenericRepository;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RentCarServer.Infrastructure.Context;
@@ -14,8 +15,11 @@ public static class ServiceRegistrar
         services.AddDbContext<ApplicationDbContext>(opt =>
         {
             string con = configuration.GetConnectionString("PostgreSQL")!;
+            Console.WriteLine($"Connection string: {con}");
             opt.UseNpgsql(con);
         });
+
+        services.AddScoped<IUnitOfWork>(srv => srv.GetRequiredService<ApplicationDbContext>());
 
         services.Scan(action => action
         .FromAssemblies(typeof(ServiceRegistrar).Assembly)

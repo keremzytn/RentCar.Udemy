@@ -1228,6 +1228,17 @@
           }
         }
       },
+      "TS.EntityFrameworkCore.GenericRepository/9.0.3": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.6"
+        },
+        "runtime": {
+          "lib/net9.0/GenericRepository.dll": {
+            "assemblyVersion": "9.0.3.0",
+            "fileVersion": "9.0.3.0"
+          }
+        }
+      },
       "TS.MediatR/9.0.6": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.6"
@@ -1252,6 +1263,7 @@
           "FluentValidation": "12.0.0",
           "FluentValidation.DependencyInjectionExtensions": "12.0.0",
           "Mapster": "7.4.0",
+          "RentCarServer.Domain": "1.0.0",
           "TS.MediatR": "9.0.6",
           "TS.Result": "9.0.1"
         },
@@ -1263,6 +1275,9 @@
         }
       },
       "RentCarServer.Domain/1.0.0": {
+        "dependencies": {
+          "TS.EntityFrameworkCore.GenericRepository": "9.0.3"
+        },
         "runtime": {
           "RentCarServer.Domain.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -1970,6 +1985,13 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "TS.EntityFrameworkCore.GenericRepository/9.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-thAP+xJpHedNU8mpsY6a5bXbcqzUffIviR65Ixyl0RPw4HNlGDEFTCp8jp6uhrXHQ0hCySNv9AmFBOtyxMWy+A==",
+      "path": "ts.entityframeworkcore.genericrepository/9.0.3",
+      "hashPath": "ts.entityframeworkcore.genericrepository.9.0.3.nupkg.sha512"
     },
     "TS.MediatR/9.0.6": {
       "type": "package",
