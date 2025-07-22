@@ -1,4 +1,4 @@
-export interface EntityModel {
+export interface EntityModel{
     id: string;
     createdAt: string;
     createdBy: string;

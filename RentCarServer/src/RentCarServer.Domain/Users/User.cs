@@ -18,7 +18,7 @@ public sealed class User : Entity
         Email = email;
         UserName = userName;
         Password = password;
-        FullName = new(FirstName.Value + " " + LastName.Value + " (" + Email.Value + ")");
+        FullName = new FullName(FirstName.Value + " " + LastName.Value);
     }
 
     private User() { }

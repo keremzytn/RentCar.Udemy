@@ -368,3 +368,4 @@
 /Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.WebAPI/obj/Debug/net9.0/RentCarServer.WebAPI.pdb
 /Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.WebAPI/obj/Debug/net9.0/RentCarServer.WebAPI.genruntimeconfig.cache
 /Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.WebAPI/obj/Debug/net9.0/ref/RentCarServer.WebAPI.dll
+/Users/kerem/Projects/RentCar/RentCarServer/src/RentCarServer.WebAPI/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

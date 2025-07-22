@@ -13,7 +13,8 @@ public static class AuthModule
 {
     public static void MapAuthModule(this IEndpointRouteBuilder builder)
     {
-        var app = builder.MapGroup("/auth");
+        var app = builder.MapGroup("/auth")
+        .RequireRateLimiting("login-fixed");
 
         app.MapPost("/login",
         async (LoginCommand request, ISender sender, CancellationToken cancellationToken) =>

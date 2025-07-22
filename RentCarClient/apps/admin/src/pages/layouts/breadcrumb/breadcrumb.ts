@@ -1,6 +1,6 @@
 import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from '@angular/core';
-import { RouteConfigLoadEnd, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { BreadcrumbService } from 'apps/admin/src/services/breadcrumb';
 
 @Component({

@@ -7,7 +7,7 @@ using TS.Result;
 namespace RentCarServer.Application.Auth;
 
 public sealed record LoginCommand(
-    string UserNameOrEmail,
+    string EmailOrUserName,
     string Password) : IRequest<Result<string>>;
 
 
@@ -15,7 +15,7 @@ public sealed class LoginCommandValidator : AbstractValidator<LoginCommand>
 {
     public LoginCommandValidator()
     {
-        RuleFor(x => x.UserNameOrEmail).NotEmpty().WithMessage("Geçerli bir mail yada kullanıcı adı girin");
+        RuleFor(x => x.EmailOrUserName).NotEmpty().WithMessage("Geçerli bir mail yada kullanıcı adı girin");
         RuleFor(x => x.Password).NotEmpty().WithMessage("Geçerli bir şifre girin");
     }
 }
@@ -27,8 +27,8 @@ public sealed class LoginCommandHandler(
     public async Task<Result<string>> Handle(LoginCommand request, CancellationToken cancellationToken)
     {
         var user = await userRepository.FirstOrDefaultAsync(p =>
-        p.Email.Value == request.UserNameOrEmail
-        || p.UserName.Value == request.UserNameOrEmail);
+        p.Email.Value == request.EmailOrUserName
+        || p.UserName.Value == request.EmailOrUserName);
 
         if (user is null)
         {

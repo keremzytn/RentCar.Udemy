@@ -1,13 +1,12 @@
 import { inject } from '@angular/core';
 import { CanActivateChildFn, Router } from '@angular/router';
-import { jwtDecode } from 'node_modules/jwt-decode/build/cjs';
-import { joinAllInternals } from 'rxjs/internal/operators/joinAllInternals';
+import { jwtDecode } from 'jwt-decode';
 
 export const authGuard: CanActivateChildFn = (childRoute, state) => {
   const token = localStorage.getItem('response');
   const router = inject(Router);
-  if (!token) {
-    router.navigate(['/login']);
+  if(!token){
+    router.navigateByUrl('/login');
     return false;
   }
 
@@ -15,7 +14,8 @@ export const authGuard: CanActivateChildFn = (childRoute, state) => {
     const decode = jwtDecode(token);
     const now = new Date().getTime() / 1000;
     const exp = decode.exp ?? 0;
-    if (exp! >= now) {
+
+    if(exp <= now){
       router.navigateByUrl('/login');
       return false;
     }

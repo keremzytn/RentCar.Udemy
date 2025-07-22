@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 
-export interface BreadcrumbModel {
+export interface BreadcrumbModel{
   title: string;
   url: string;
   icon: string;
@@ -10,21 +10,20 @@ export interface BreadcrumbModel {
 @Injectable({
   providedIn: 'root'
 })
-
 export class BreadcrumbService {
   readonly data = signal<BreadcrumbModel[]>([]);
 
-  reset() {
+  reset(){
     const dashboard: BreadcrumbModel = {
       title: 'Dashboard',
       url: '/',
       icon: 'bi-speedometer2'
     }
 
-    this.data.set([{ ...dashboard }]);
+    this.data.set([{...dashboard}]);
   }
 
-  setDashboard() {
+  setDashboard(){
     const dashboard: BreadcrumbModel = {
       title: 'Dashboard',
       url: '/',
@@ -32,10 +31,10 @@ export class BreadcrumbService {
       isActive: true
     }
 
-    this.data.set([{ ...dashboard }]);
+    this.data.set([{...dashboard}]);
   }
 
-  set(breadcrumbs: BreadcrumbModel[]) {
+  set(breadcrumbs: BreadcrumbModel[]){
     this.data.update(prev => [...prev, ...breadcrumbs]);
   }
 }

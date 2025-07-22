@@ -19,16 +19,16 @@ export default class Blank {
   readonly pageTitle = input.required<string>();
   readonly pageDescription = input<string>('');
   readonly showStatus = input<boolean>(false);
-  readonly status = input<boolean>(false);
+  readonly status = input<boolean>(true);
   readonly showBackBtn = input<boolean>(true);
   readonly showEditBtn = input<boolean>(false);
-  readonly editBtnUrl = input<string>('');
+  readonly editBtnUrl = input<string>("");
   readonly audit = input<EntityModel>();
-  readonly showAudit = input<boolean>(false);
+  readonly showAduit = input<boolean>(false);
 
   readonly #location = inject(Location);
 
-  back() {
+  back(){
     this.#location.back();
   }
 }

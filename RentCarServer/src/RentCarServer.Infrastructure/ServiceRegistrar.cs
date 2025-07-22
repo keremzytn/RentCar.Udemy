@@ -2,7 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RentCarServer.Application.Services;
 using RentCarServer.Infrastructure.Context;
+using RentCarServer.Infrastructure.Options;
+using RentCarServer.Infrastructure.Services;
 using Scrutor;
 
 namespace RentCarServer.Infrastructure;
@@ -10,6 +13,12 @@ public static class ServiceRegistrar
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
+        services.Configure<JwtOptions>(configuration.GetSection("Jwt"));
+        services.ConfigureOptions<JwtSetupOptions>();
+        services.AddScoped<IJwtProvider, JwtProvider>();
+        services.AddAuthentication().AddJwtBearer();
+        services.AddAuthorization();
+
         services.AddHttpContextAccessor();
 
         services.AddDbContext<ApplicationDbContext>(opt =>
@@ -28,7 +37,6 @@ public static class ServiceRegistrar
         .AsImplementedInterfaces()
         .WithScopedLifetime()
         );
-
         return services;
     }
 }
