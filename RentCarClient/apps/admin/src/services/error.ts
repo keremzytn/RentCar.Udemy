@@ -13,9 +13,9 @@ export class ErrorService {
     console.log(err);
     const status = err.status;
     if (status === 403 || status === 422 || status === 500) {
-      const message = err.error.errorMessages;
-      message.forEach((val: string) => {
-        this.#toast.showToast("Hata! ", val, "error");
+      const messages = err.error.errorMessages;
+      messages.forEach((val: string) => {
+        this.#toast.showToast("Hata!", val, "error");
       });
     }
   }

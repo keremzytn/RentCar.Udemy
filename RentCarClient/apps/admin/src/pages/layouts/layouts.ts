@@ -36,7 +36,7 @@ export default class Layouts implements OnInit, OnDestroy {
     }
   }
 
-  logout() {
+  logout(){
     localStorage.clear();
     this.#router.navigateByUrl("/login");
   }

@@ -38,5 +38,20 @@ public sealed class UserConfigiration : IEntityTypeConfiguration<User>
         });
 
         builder.Ignore(p => p.FullName);
+
+        builder.OwnsOne(p => p.ForgotPasswordId, forgotPasswordIdBuilder =>
+        {
+            forgotPasswordIdBuilder.Property(p => p.Value).HasColumnName("ForgotPasswordId");
+        });
+
+        builder.OwnsOne(p => p.ForgotPasswordDate, forgotPasswordDateBuilder =>
+        {
+            forgotPasswordDateBuilder.Property(p => p.Value).HasColumnName("ForgotPasswordDate");
+        });
+        
+        builder.OwnsOne(p => p.IsForgotPasswordCompleted, isForgotPasswordCompletedBuilder =>
+        {
+            isForgotPasswordCompletedBuilder.Property(p => p.Value).HasColumnName("IsForgotPasswordCompleted");
+        });
     }
 }

@@ -7,19 +7,21 @@ import { Result } from '../models/result.model';
   providedIn: 'root'
 })
 export class HttpService {
+
   readonly #http = inject(HttpClient);
   readonly #error = inject(ErrorService);
+
   get<T>(
     endpoint: string,
-    callBack: (res: T) => void,
-    errorCallBack?: (err: HttpErrorResponse) => void) {
-    this.#http.get<Result<T>>(endpoint).subscribe({
-      next: (res: any) => {
-        callBack(res.data!);
+    callBack: (res:T) => void,
+    errorCallBack?: (err: HttpErrorResponse) => void){
+    this.#http.delete<Result<T>>(endpoint).subscribe({
+      next: (res) => {
+        callBack(res.data!)
       },
       error: (err: HttpErrorResponse) => {
         this.#error.handle(err);
-        if (errorCallBack) {
+        if(errorCallBack){
           errorCallBack(err);
         }
       }
@@ -28,16 +30,16 @@ export class HttpService {
 
   post<T>(
     endpoint: string,
-    body: any,
-    callBack: (res: T) => void,
-    errorCallBack?: (err: HttpErrorResponse) => void) {
+    body:any,
+    callBack: (res:T) => void,
+    errorCallBack?: (err: HttpErrorResponse) => void){
     this.#http.post<Result<T>>(endpoint, body).subscribe({
-      next: (res: any) => {
-        callBack(res.data!);
+      next: (res) => {
+        callBack(res.data!)
       },
       error: (err: HttpErrorResponse) => {
         this.#error.handle(err);
-        if (errorCallBack) {
+        if(errorCallBack){
           errorCallBack(err);
         }
       }
@@ -46,16 +48,16 @@ export class HttpService {
 
   put<T>(
     endpoint: string,
-    body: any,
-    callBack: (res: T) => void,
-    errorCallBack?: (err: HttpErrorResponse) => void) {
+    body:any,
+    callBack: (res:T) => void,
+    errorCallBack?: (err: HttpErrorResponse) => void){
     this.#http.put<Result<T>>(endpoint, body).subscribe({
-      next: (res: any) => {
-        callBack(res.data!);
+      next: (res) => {
+        callBack(res.data!)
       },
       error: (err: HttpErrorResponse) => {
         this.#error.handle(err);
-        if (errorCallBack) {
+        if(errorCallBack){
           errorCallBack(err);
         }
       }
@@ -64,15 +66,15 @@ export class HttpService {
 
   delete<T>(
     endpoint: string,
-    callBack: (res: T) => void,
-    errorCallBack?: (err: HttpErrorResponse) => void) {
+    callBack: (res:T) => void,
+    errorCallBack?: (err: HttpErrorResponse) => void){
     this.#http.delete<Result<T>>(endpoint).subscribe({
-      next: (res: any) => {
-        callBack(res.data!);
+      next: (res) => {
+        callBack(res.data!)
       },
       error: (err: HttpErrorResponse) => {
         this.#error.handle(err);
-        if (errorCallBack) {
+        if(errorCallBack){
           errorCallBack(err);
         }
       }

@@ -17,7 +17,7 @@ public static class ExtensionMethods
         {
             FirstName firstName = new("Taner");
             LastName lastName = new("Saydam");
-            Email email = new("tanersadaym@gmail.com");
+            Email email = new("tanersaydam@gmail.com");
             UserName userName = new("admin");
             Password password = new("1");
 

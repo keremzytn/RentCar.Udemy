@@ -7,6 +7,8 @@ using RentCarServer.WebAPI;
 using Scalar.AspNetCore;
 using RentCarServer.WebAPI.Modules;
 using RentCarServer.Infrastructure.Options;
+using RentCarServer.Application.Services;
+using TS.Result;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +40,12 @@ builder.Services.AddRateLimiter(cfr =>
         opt.PermitLimit = 5;
         opt.QueueLimit = 1;
         opt.Window = TimeSpan.FromMinutes(1);
+        opt.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+    });
+    cfr.AddFixedWindowLimiter("forgot-password-fixed", opt =>
+    {
+        opt.PermitLimit = 2;
+        opt.Window = TimeSpan.FromMinutes(5);
         opt.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
     });
 });
@@ -82,8 +90,13 @@ app.MapControllers()
 .RequireRateLimiting("fixed")
 .RequireAuthorization();
 
-app.MapAuthModule();
+app.MapAuth();
 
-app.MapGet("/", () => "Hello World").RequireAuthorization();
+app.MapGet("/", async (IMailService mailService) =>
+{
+    await mailService.SendAsync("mustafakeremzeytun1@gmail.com", "Test", "Test", default);
+    return Results.Ok("Mail gönderildi");
+});
+
 //await app.CreateFirstUser();
 app.Run();

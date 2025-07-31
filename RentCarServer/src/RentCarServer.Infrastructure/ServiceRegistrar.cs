@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using RentCarServer.Application.Services;
 using RentCarServer.Infrastructure.Context;
 using RentCarServer.Infrastructure.Options;
@@ -18,6 +19,20 @@ public static class ServiceRegistrar
         services.AddScoped<IJwtProvider, JwtProvider>();
         services.AddAuthentication().AddJwtBearer();
         services.AddAuthorization();
+
+        services.Configure<MailSettingOptions>(configuration.GetSection("MailSettings"));
+
+        using var scoped = services.BuildServiceProvider().CreateScope();
+        var mailSettings = scoped.ServiceProvider.GetRequiredService<IOptions<MailSettingOptions>>();
+
+        services
+        .AddFluentEmail(
+            mailSettings.Value.Username)
+        .AddSmtpSender(
+            mailSettings.Value.Host, 
+            mailSettings.Value.Port, 
+            mailSettings.Value.Username, 
+            mailSettings.Value.Password);
 
         services.AddHttpContextAccessor();
 
